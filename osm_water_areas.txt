@@ -1,0 +1,35 @@
+*/ 
+[out:json][timeout:250];
+// fetch area "İstanbul” to search in 
+{{geocodeArea:İstanbul}}-
+>.searchArea;
+// gather results 
+(
+// query part for: "admin_level=8"
+node[water=lagoon]
+(area.searchArea);
+way[water=lagoon]
+(area.searchArea);
+relation[water=lagoon]
+(area.searchArea);
+ 
+ node[water=lake] 
+node[water=oxbow]
+ 
+);
+// print results
+out body; 
+>;
+out skel qt;
+* The layers below, such as "lagoon" 
+and "lake", have been obtained with the 
+same method used in the code block 
+above.
+node[water=oxbow] 
+node[water=rapids] 
+node[water=river]
+node[water=stream] 
+node[water=river]
+node[water=stream_pool] 
+node[water=reservoir] 
+node[water=drain]
